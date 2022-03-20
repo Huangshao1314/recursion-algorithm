@@ -1,27 +1,11 @@
-# 递归案例
-## 归并排序
-归并排序（MERGE-SORT）是利用归并的思想实现的排序方法，该算法采用经典的分治（divide-and-conquer）策略（分治法将问题分(divide)成一些小的问题然后递归求解，而治(conquer)的阶段则将分的阶段得到的各答案"修补"在一起，即分而治之)。
-
-### 示例 1：
-```
-输入：arr = [8,4,5,7,1,3,6,2]]
-输出：[1,2,3,4,5,6,7,8]
-解释：升序排列
-```
-
-## 题解
-### 1.示例图
-<img src="../img/merge1.png"/>
-<img src="../img/merge2.png"/>
-
-### 2.代码
-```js
+// ---------------- 封装排序算法测试 ---------------- //
+console.log('// ----- 封装排序算法测试 START -----//');
 /**
  * @param {array} left
  * @param {array} right
  * @return {array} arr
  */
-var merge = function(left,right){
+ var merge = function(left,right){
   let temp=[];
   while(left.length&&right.length){
       if(left[0]<right[0]){
@@ -41,7 +25,7 @@ var merge = function(left,right){
 var mergeSort = function(arr) {
   if(arr.length<=1){
     return arr;
-  } 
+  }
   let mid=Math.floor(arr.length/2);
   let left=arr.slice(0,mid);
   let right=arr.slice(mid);
@@ -50,10 +34,5 @@ var mergeSort = function(arr) {
 let data=[8,4,5,7,1,3,6,2];
 let sortedData=mergeSort(data);
 console.log(sortedData);
-```
 
-### 3.复杂度分析
-
-时间复杂度O(nlog2n): 最坏时间为nlog2n
-空间复杂度O(n): 递归调用n个栈
-
+console.log('// ----- 封装排序算法测试 END -----//');
